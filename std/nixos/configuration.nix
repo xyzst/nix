@@ -24,6 +24,21 @@
     ./hardware-configuration.nix
   ];
 
+  fileSystems = {
+    # [2024-04-20] fix "⚠️ Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! ⚠️" warning
+    # https://github.com/NixOS/nixpkgs/issues/279362#issuecomment-1913506090
+    # https://github.com/NixOS/nixpkgs/issues/279362#issuecomment-1883970541
+    # https://discourse.nixos.org/t/security-warning-when-installing-nixos-23-11/37636/3
+    "/boot" = {
+      options = [
+        "uid=0"
+        "gid=0"
+        "fmask=0077"
+        "dmask=0077"
+      ];
+    };
+  };
+
   nixpkgs = {
     # You can add overlays here
     overlays = [

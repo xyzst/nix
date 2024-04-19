@@ -57,7 +57,7 @@
     homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#ryp'
+    # Available through 'nixos-rebuild --flake .#ryz'
     nixosConfigurations = {
       # FIXME replace with your hostname
       ryz = nixpkgs.lib.nixosSystem {

@@ -73,7 +73,6 @@
 
     gc = {
       automatic = true;
-      frequency = "weekly";
     };
     
     # This will additionally add your inputs to the system's legacy channels
@@ -124,10 +123,14 @@
     };    
   };
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+    };
+  };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users = {
     groups = {
       dev = {
@@ -150,11 +153,10 @@
         # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
         extraGroups = ["wheel"];
         group = "dev";
+      };
     };
   };
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
   services = {
     openssh = {
       banner = ''🤠 Howdy, partner!
@@ -162,9 +164,7 @@
       '';
       enable = true;
       settings = {
-        # Forbid root login through SSH.
         PermitRootLogin = "no";
-        # Use keys only. Remove if you want to SSH using password (not recommended)
         PasswordAuthentication = false;
       };
     };
@@ -180,9 +180,6 @@
   };
 
   system = {
-    # Copy NixOS configuration file and link it from the resulting system (/run/current-system/configuration.nix)
-    # This is useful in case you accidentally delete configuration.nix
-    copySystemConfiguration = true;
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #

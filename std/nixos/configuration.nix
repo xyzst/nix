@@ -96,6 +96,7 @@
     config.nix.registry;
     
     systemPackages = with pkgs; [
+      git
     ];
   };
 

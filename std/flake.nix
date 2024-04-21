@@ -59,11 +59,9 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#ryz'
     nixosConfigurations = {
-      # FIXME replace with your hostname
       "ryz" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
           ./nixos/configuration.nix
         ];
       };

@@ -103,10 +103,6 @@
       value.source = value.flake;
     })
     config.nix.registry;
-    
-    systemPackages = with pkgs; [
-      git
-    ];
   };
 
 
@@ -160,8 +156,23 @@
             ];
           };
         };
-        # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-        extraGroups = ["wheel"];
+        extraGroups = [
+          "wheel" # enable `sudo`
+        ];
+        group = "dev";
+      };
+      a = {
+        initialPassword = "shortmsft";
+        isNormalUser = true;
+        openssh = {
+          authorizedKeys = {
+            keys = [
+              # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+            ];
+          };
+        };
+        extraGroups = [
+        ];
         group = "dev";
       };
     };

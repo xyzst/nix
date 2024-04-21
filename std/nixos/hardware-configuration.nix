@@ -10,5 +10,8 @@
     spice-vdagentd = { # needed to enable copy and paste between host and VM
       enable = true;
     };
+    spice-webdavd = {
+      enable = true;
+    };
   };
 }

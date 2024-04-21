@@ -1,5 +1,7 @@
-# This is just an example, you should generate yours with nixos-generate-config and put it in here.
 {
-  # Set your system kind (needed for flakes)
-  nixpkgs.hostPlatform = "aarch64-linux";
+  # todo: parameterize hostPlatform when installing flake, somehow...
+  # use nix language?
+  imports = [
+    ./hw/aarch64-linux/qemu.nix
+  ];
 }

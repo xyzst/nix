@@ -77,6 +77,14 @@
     # To make nix3 commands consistent with your flake
     registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
     
+    settings = {
+      substituters = [
+        "https://ryz-dev.cachix.org"
+      ];
+      trusted-public-keys = [
+        "ryz-dev.cachix.org-1:fu8HH5PhQuDVA/TIOLiNjo62TjoOCp8XnmOBmHo8S08="
+      ];
+    };
   };
 
   environment = {

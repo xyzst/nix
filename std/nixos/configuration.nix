@@ -153,7 +153,7 @@
         openssh = {
           authorizedKeys = {
             keys = [
-              # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYjTKw+0nIX2x0vx3Z6xtd7O8Lb6ZkB26z7STsqYJ8g"
             ];
           };
         };

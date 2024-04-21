@@ -162,7 +162,7 @@
         ];
         group = "dev";
       };
-      a = {
+      x = {
         initialPassword = "shortmsft";
         isNormalUser = true;
         openssh = {

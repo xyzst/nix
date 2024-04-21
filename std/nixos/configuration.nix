@@ -17,6 +17,8 @@
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
+    inputs.home-manager.nixosModules.home-manager
+
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
@@ -36,6 +38,13 @@
         "fmask=0077"
         "dmask=0077"
       ];
+    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs output; };
+    users = {
+      d = import ../home-manager/home.nix;
     };
   };
 

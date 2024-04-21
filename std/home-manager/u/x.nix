@@ -6,6 +6,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../home.nix
+  ];
+  
   home = {
     homeDirectory = "/home/x";
     packages = with pkgs; [

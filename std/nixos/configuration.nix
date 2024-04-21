@@ -42,9 +42,10 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs output; };
+    extraSpecialArgs = { inherit inputs outputs; };
     users = {
-      d = import ../home-manager/home.nix;
+      d = import ../home-manager/u/d.nix;
+      x = import ../home-manager/u/x.nix;
     };
   };
 

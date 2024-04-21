@@ -22,10 +22,6 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-
-    # user specific configuration
-    ./u/d.nix
-    ./u/a.nix
   ];
 
   nixpkgs = {

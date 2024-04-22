@@ -80,9 +80,11 @@
     settings = {
       substituters = [
         "https://ryz-dev.cachix.org"
+        "https://hyprland.cachix.org"
       ];
       trusted-public-keys = [
         "ryz-dev.cachix.org-1:fu8HH5PhQuDVA/TIOLiNjo62TjoOCp8XnmOBmHo8S08="
+        hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
   };
@@ -95,9 +97,6 @@
     })
     config.nix.registry;
   };
-
-
-  # FIXME: Add the rest of your current configuration
 
   networking = {
     firewall = {
@@ -183,10 +182,11 @@
  _|          _|_|_|  _|_|_|_|  _|    _|_|_|    _|_|_|      _|
                  _|
              _|_|
----
+
 If you're reading this, you've been in a coma for almost 20 years now.
 We're trying a new technique. We don't know where this message will
 end up in your dream, but we hope it works. Please wake up, we miss you.
+
       '';
       enable = true;
       settings = {

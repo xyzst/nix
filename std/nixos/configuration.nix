@@ -84,7 +84,7 @@
       ];
       trusted-public-keys = [
         "ryz-dev.cachix.org-1:fu8HH5PhQuDVA/TIOLiNjo62TjoOCp8XnmOBmHo8S08="
-        hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
   };
